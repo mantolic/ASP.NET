@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Moj rokovnik</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="header">
+    <div class="row">
+        <div class="header-status">
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" 
+                    LogoutPageUrl="~/Default.aspx" LogoutText="LOGOUT" />
+        </div>   
+   
+        <div class="header-title"><h1>Moj rokovnik</h1></div>
+    
+        <div class="nav">
+            <ul>
+               <!-- <li>
+                    <asp:HyperLink ID="HyperLinkHome" runat="server" NavigateUrl="~/Home.aspx">Početna</asp:HyperLink>
+                </li>-->
+                <li>
+                    <asp:HyperLink ID="HyperLinkPlanner" runat="server" 
+                        NavigateUrl="~/Planner.aspx">Uređivanje događaja</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="HyperLinkEvents" runat="server" NavigateUrl="~/Events.aspx">Popis događaja</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="HyperLinkInfo" runat="server" 
+                        NavigateUrl="~/PersonalInfo.aspx">Osobni podaci</asp:HyperLink>
+                </li>
+            </ul>
+        </div>
+     </div>
+     </div>
+
+    <div class="row wrapper">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="footer">
+        <h4 align="center">&copy; 2014 Matea Antolić</h4>
+    </div>
+    </form>
+</body>
+</html>
